@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/react";
-import { SearchParams } from 'types/searching/searchParams';
+import { SearchParams } from "types/searching/searchParams";
 
 const AllTomCruiseMovies = ({
   onSearch,
@@ -12,7 +12,7 @@ const AllTomCruiseMovies = ({
 
   return (
     <Button colorScheme="green" onClick={search}>
-      All Tom Cruise
+      Tom Cruise
     </Button>
   );
 };

@@ -20,9 +20,15 @@ const AllTomCruiseMoviesList = () => {
   if (!data.Movie) return <WaitingOnInput />;
   if (data.Movie.length === 0) return <NoMatches />;
 
-  // https://www.apollographql.com/docs/react/pagination/offset-based#using-with-fetchmore
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 20,
+        paddingBottom: "20px",
+      }}
+    >
       <MovieDataList movies={data.Movie} />
       <Button
         color="blue"
@@ -31,7 +37,7 @@ const AllTomCruiseMoviesList = () => {
       >
         Load More ...
       </Button>
-    </>
+    </div>
   );
 };
 

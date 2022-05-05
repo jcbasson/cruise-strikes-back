@@ -7,14 +7,14 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
       style={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
         padding: "0 10px",
         gap: 20,
-        width: 960,
-        margin: "auto",
+        width: "100vw",
+        height: "100vh",
       }}
     >
       <Header />
-      <hr />
       <div>{children}</div>
     </div>
   );

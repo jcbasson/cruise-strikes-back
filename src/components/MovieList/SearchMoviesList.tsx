@@ -21,7 +21,14 @@ const SearchMoviesList = ({ searchText }: { searchText: string }) => {
   if (data.Movie.length === 0) return <NoMatches />;
 
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 20,
+        paddingBottom: "20px",
+      }}
+    >
       <MovieDataList movies={data.Movie} />
       <Button
         color="blue"
@@ -30,7 +37,7 @@ const SearchMoviesList = ({ searchText }: { searchText: string }) => {
       >
         Load More ...
       </Button>
-    </>
+    </div>
   );
 };
 

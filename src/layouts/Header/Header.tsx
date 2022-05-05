@@ -6,14 +6,14 @@ const Header = () => {
     <div
       style={{
         display: "flex",
+        flexDirection: "column",
         gap: 20,
-        width: 960,
-        margin: "auto",
+        padding: "0 0 20px 0",
+        borderBottom: "1px solid lightgrey",
       }}
     >
-      <img src={logo} alt="Tom Cruise" width={100} />
-
-      <Heading fontSize="6xl">Tom Cruise Finder</Heading>
+      <img src={logo} alt="Tom Cruise" />
+      <Heading fontSize="4xl">Tom Cruise Strikes Back</Heading>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { Text } from "@chakra-ui/react";
-import { SearchParams } from 'types/searching/searchParams';
+import { SearchParams } from "types/searching/searchParams";
 import AllTomCruiseMovies from "./AllTomCruiseMovies";
 import SearchMovies from "./SearchMovies";
 
@@ -8,15 +8,13 @@ const SearchInput = ({
 }: {
   onSearch: ({ text, type }: SearchParams) => void;
 }) => {
-
-
   return (
-    <div style={{ display: "flex", gap: 20 }}>
+    <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
       <SearchMovies onSearch={onSearch} />
-      <Text fontSize="2xl">OR</Text>
+      <Text fontSize="1xl">OR</Text>
       <AllTomCruiseMovies onSearch={onSearch} />
     </div>
   );
 };
 
-export default SearchInput
+export default SearchInput;

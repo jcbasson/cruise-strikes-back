@@ -1,8 +1,15 @@
 import { Heading } from "@chakra-ui/react";
 const MovieDataList = ({ movies }: { movies: any }) => {
   return (
-    <>
-      <Heading>SEARCH RESULTS</Heading>
+    <main
+      style={{
+        paddingTop: "20px",
+        display: "flex",
+        flexDirection: "column",
+        gap: 20,
+      }}
+    >
+      <Heading fontSize="xl">SEARCH RESULTS</Heading>
       <table>
         <thead>
           <tr>
@@ -21,7 +28,7 @@ const MovieDataList = ({ movies }: { movies: any }) => {
           );
         })}
       </table>
-    </>
+    </main>
   );
 };
 

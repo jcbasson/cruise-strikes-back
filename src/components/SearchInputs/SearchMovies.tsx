@@ -1,6 +1,6 @@
 import { Button, Input } from "@chakra-ui/react";
 import { useState } from "react";
-import { SearchParams } from 'types/searching/searchParams';
+import { SearchParams } from "types/searching/searchParams";
 
 const SearchMovies = ({
   onSearch,
@@ -21,7 +21,7 @@ const SearchMovies = ({
         onChange={(e) => setSearchText(e.target.value)}
       />
       <Button colorScheme="blue" onClick={() => search(searchText)}>
-        Search All
+        Search
       </Button>
     </div>
   );
