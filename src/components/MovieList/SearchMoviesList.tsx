@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 import { useQuery } from "@apollo/client";
 import { Button } from "@chakra-ui/button";
 import movieSearchQuery from "queries/movies/movieSearchQuery";
@@ -7,6 +8,12 @@ import MovieDataList from "./components/MovieDataList";
 import NoMatches from "./components/NoMatches";
 import WaitingOnInput from "./components/WaitingOnInput";
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+`;
 const SearchMoviesList = ({ searchText }: { searchText: string }) => {
   const [first, setFirst] = useState(10);
   const { loading, data } = useQuery(movieSearchQuery, {
@@ -21,14 +28,7 @@ const SearchMoviesList = ({ searchText }: { searchText: string }) => {
   if (data.Movie.length === 0) return <NoMatches />;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: 20,
-        paddingBottom: "20px",
-      }}
-    >
+    <Container>
       <MovieDataList movies={data.Movie} />
       <Button
         color="blue"
@@ -37,7 +37,7 @@ const SearchMoviesList = ({ searchText }: { searchText: string }) => {
       >
         Load More ...
       </Button>
-    </div>
+    </Container>
   );
 };
 

@@ -1,6 +1,6 @@
+import styled from "styled-components";
 import {
   Avatar,
-  Box,
   Heading,
   Table,
   Thead,
@@ -11,55 +11,63 @@ import {
   TableContainer,
   Text,
 } from "@chakra-ui/react";
+
+const Container = styled.div`
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
 const MovieDataList = ({ movies }: { movies: any }) => {
   return (
-    <main
-      style={{
-        paddingTop: "20px",
-        display: "flex",
-        flexDirection: "column",
-        gap: 20,
-      }}
-    >
+    <Container>
       <Heading fontSize="xl">SEARCH RESULTS</Heading>
-      <Box display="flex" alignItems="center">
-        <TableContainer>
-          <Table variant="simple" size="sm">
-            <Thead>
-              <Tr>
-                <Th></Th>
-                <Th>Title</Th>
-                <Th isNumeric>Year</Th>
+      <TableContainer>
+        <Table variant="simple" size="md">
+          <Thead>
+            <Tr>
+              <Th></Th>
+              <Th>Title</Th>
+              <Th isNumeric>Year</Th>
+              <Th isNumeric>Imdb</Th>
+              <Th>Genre</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {movies.map((movie: any) => (
+              <Tr key={movie.movieId}>
+                <Td style={{ width: 80 }}>
+                  <Avatar name={movie.title} src={movie.poster} />
+                </Td>
+                <Td>
+                  <Text style={{ maxWidth: 500, overflowWrap: "break-word" }}>
+                    {movie.title}
+                  </Text>
+                </Td>
+                <Td style={{ width: 20 }} isNumeric>
+                  {movie.year}
+                </Td>
+                <Td style={{ width: 10, textAlign: "center" }} isNumeric>
+                  {movie.imdbRating}
+                </Td>
+                <Td>
+                  <Text style={{ maxWidth: 200 }} isTruncated>
+                    {movie.genres
+                      .reduce((prev: string, genre: { name: string }) => {
+                        if (genre && genre.name) {
+                          return `${prev},${genre.name}`;
+                        }
+                        return prev;
+                      }, "")
+                      .substring(1)}
+                  </Text>
+                </Td>
               </Tr>
-            </Thead>
-            <Tbody>
-              {movies.map((movie: any) => (
-                <Tr>
-                  <Td>
-                    <Avatar name={movie.title} src={movie.poster} />
-                  </Td>
-                  <Td>{movie.title}</Td>
-                  <Td isNumeric>{movie.year}</Td>
-                  <Td isNumeric>{movie.imdbRating}</Td>
-                  <Td>
-                    <Text noOfLines={[1, 2, 3]}>
-                      {movie.genres
-                        .reduce((prev: string, genre: { name: string }) => {
-                          if (genre && genre.name) {
-                            return `${prev},${genre.name}`;
-                          }
-                          return prev;
-                        }, "")
-                        .substring(1)}
-                    </Text>
-                  </Td>
-                </Tr>
-              ))}
-            </Tbody>
-          </Table>
-        </TableContainer>
-      </Box>
-    </main>
+            ))}
+          </Tbody>
+        </Table>
+      </TableContainer>
+    </Container>
   );
 };
 

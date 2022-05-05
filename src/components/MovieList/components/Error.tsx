@@ -1,8 +1,11 @@
+import { Text } from "@chakra-ui/react";
 
 const Error = () => {
   return (
-    <>Error</>
-  )
-}
+    <Text style={{ textAlign: "center", paddingTop: "20px" }} fontSize="3xl">
+      Error
+    </Text>
+  );
+};
 
-export default Error
+export default Error;
