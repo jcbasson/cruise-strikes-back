@@ -4,11 +4,11 @@ import { movieFrament } from "./movieFragment";
 const movieSearchQuery = gql`
   ${movieFrament}
 
-  query Movies($filter: _MovieFilter!) {
-    Movie(filter: $filter) {
+  query Movies($first: Int, $filter: _MovieFilter!) {
+    Movie(first: $first, filter: $filter) {
       ...MovieFields
     }
   }
 `;
 
-export default movieSearchQuery
+export default movieSearchQuery;
