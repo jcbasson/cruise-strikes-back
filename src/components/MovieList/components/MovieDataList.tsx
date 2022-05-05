@@ -1,6 +1,5 @@
-
-import { Heading } from '@chakra-ui/react';
-const MovieDataList = ({ data }: { data: any }) => {
+import { Heading } from "@chakra-ui/react";
+const MovieDataList = ({ movies }: { movies: any }) => {
   return (
     <>
       <Heading>SEARCH RESULTS</Heading>
@@ -12,7 +11,7 @@ const MovieDataList = ({ data }: { data: any }) => {
             <th>Actor</th>
           </tr>
         </thead>
-        {data.Movies.map((movie: any) => {
+        {movies.map((movie: any) => {
           return (
             <tr>
               <td>{movie.id}</td>

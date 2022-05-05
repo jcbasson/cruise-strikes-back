@@ -1,11 +1,11 @@
-import { useQuery } from '@apollo/client';
-import movieSearchQuery from 'queries/movies/movieSearchQuery';
-import LoadingInProgress from './components/LoadingInProgress';
-import MovieDataList from './components/MovieDataList';
-import NoMatches from './components/NoMatches';
-import WaitingOnInput from './components/WaitingOnInput';
+import { useQuery } from "@apollo/client";
+import movieSearchQuery from "queries/movies/movieSearchQuery";
+import LoadingInProgress from "./components/LoadingInProgress";
+import MovieDataList from "./components/MovieDataList";
+import NoMatches from "./components/NoMatches";
+import WaitingOnInput from "./components/WaitingOnInput";
 
-const SearchMoviesList = ({ searchText } : { searchText: string }) => {
+const SearchMoviesList = ({ searchText }: { searchText: string }) => {
   console.log(searchText);
   const { loading, data } = useQuery(movieSearchQuery, {
     variables: {
@@ -15,12 +15,10 @@ const SearchMoviesList = ({ searchText } : { searchText: string }) => {
   });
 
   if (loading) return <LoadingInProgress />;
-  if (!data.Movies) return <WaitingOnInput />;
-  if (data.Movies.length === 0) return <NoMatches />;
+  if (!data.Movie) return <WaitingOnInput />;
+  if (data.Movie.length === 0) return <NoMatches />;
 
-  return (
-    <MovieDataList data={data} />
-  );
+  return <MovieDataList movies={data.Movie} />;
 };
 
 export default SearchMoviesList;
