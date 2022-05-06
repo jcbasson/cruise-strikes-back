@@ -1,10 +1,10 @@
-import { Text } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/react";
 
 const LoadingInProgress = () => {
   return (
-    <Text style={{ textAlign: "center", paddingTop: "20px" }} fontSize="3xl">
-      Loading...
-    </Text>
+    <div style={{ display: "flex", alignItems: "center", padding: 50 }}>
+      <Spinner size="xl" />;
+    </div>
   );
 };
 

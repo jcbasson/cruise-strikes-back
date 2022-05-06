@@ -11,8 +11,8 @@ const AllTomCruiseMovies = ({
   };
 
   return (
-    <Button colorScheme="green" onClick={search}>
-      Tom Cruise
+    <Button colorScheme="blue" onClick={search}>
+      All Tom Cruise Movies
     </Button>
   );
 };

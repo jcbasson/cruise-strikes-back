@@ -1,0 +1,29 @@
+table.movies {
+  margin-top: 32px;
+  border-collapse: collapse;
+  font-family: Tahoma, Geneva, sans-serif;
+  width: 100%;
+}
+table.movies td {
+  padding: 15px;
+}
+table.movies thead th {
+  padding: 15px;
+  background-color: #063f83;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid #54585d;
+  text-align: left;
+}
+table.movies tbody td {
+  color: #636363;
+  border: 1px solid #dddfe1;
+  text-align: left;
+}
+table.movies tbody tr {
+  background-color: #f9fafb;
+}
+table.movies tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}

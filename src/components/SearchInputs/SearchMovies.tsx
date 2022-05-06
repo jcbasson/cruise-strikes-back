@@ -1,12 +1,7 @@
-import styled from "styled-components";
 import { Button, Input } from "@chakra-ui/react";
 import { useState } from "react";
 import { SearchParams } from "types/searching/searchParams";
 
-const Container = styled.div`
-  display: flex;
-  gap: 5px;
-`;
 const SearchMovies = ({
   onSearch,
 }: {
@@ -19,7 +14,7 @@ const SearchMovies = ({
   };
 
   return (
-    <Container>
+    <div style={{ display: "flex", gap: 5 }}>
       <Input
         placeholder="Enter movie title"
         value={searchText}
@@ -28,7 +23,7 @@ const SearchMovies = ({
       <Button colorScheme="blue" onClick={() => search(searchText)}>
         Search
       </Button>
-    </Container>
+    </div>
   );
 };
 

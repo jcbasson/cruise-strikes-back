@@ -1,21 +1,20 @@
 import { Heading } from "@chakra-ui/react";
-import logo from "assets/tom-cruise.gif";
-import styled from "styled-components";
-
-const Container = styled.header`
-  display: flex;
-  flex-direction: column;
-  gap: 20;
-  padding: 0 0 20px 0;
-  align-items: center;
-`;
+import Background from "assets/tom-cruise.png";
 
 const Header = () => {
   return (
-    <Container>
-      <img src={logo} alt="Tom Cruise" />
-      <Heading fontSize="4xl">Tom Cruise Strikes Back</Heading>
-    </Container>
+    <div
+      style={{
+        width: 960,
+        margin: "auto",
+        padding: 20,
+        height: 143,
+        color: "#fff",
+        backgroundImage: `url(${Background})`,
+      }}
+    >
+      <Heading fontSize="6xl">Tom Cruise Finder</Heading>
+    </div>
   );
 };
 
