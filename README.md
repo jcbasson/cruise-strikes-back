@@ -1,4 +1,4 @@
-# Tom Finder
+# Tom Cruise Finder
 
 ## To get started
 
