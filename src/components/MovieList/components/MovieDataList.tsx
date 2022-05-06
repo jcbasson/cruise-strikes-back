@@ -16,7 +16,7 @@ const MovieDataList = ({ movies }: { movies: Movie[] }) => {
         </thead>
         <tbody>
           {movies.map((movie: any) => (
-            <tr key={movie.movieId}>
+            <tr key={movie.movieId} data-testid={movie.movieId}>
               <td>
                 <Avatar name={movie.title} src={movie.poster} />
               </td>
